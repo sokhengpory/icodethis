@@ -1,0 +1,102 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  background: #1a182d;
+  color: #fff;
+  line-height: 1.5;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img{
+  width: 100px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+}
+
+i{
+  border: 1px solid #3a7cce;
+  border-radius: 50%;
+  padding: 6px;
+  color: #4b77b0;
+}
+
+button{
+  all: unset;
+  border: 1px solid #4b77b0;
+  border-radius: 20px;
+  padding: 8px 2rem;
+  color: #3a7cce;
+  font-weight: bold;
+  transition: background .5s;
+}
+
+button:hover{
+  background: #3a7cce;
+  color: #fff;
+  cursor: pointer;
+}
+
+.primary{
+  color: #3a7cce;
+  font-weight: 600;
+}
+
+.container{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select-container{
+  background: #141323;
+  border-radius: 5px;
+  padding: 4rem 6rem;
+}
+
+.select-container h2{
+  padding: 1rem;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card, .card-add{
+  background: #1a182d;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+  transition: transform 500ms;
+}
+
+:where(.card,.card-add):hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-add i, .card-add p{
+  margin-top: auto;
+}
+
+.btn{
+  display: grid;
+  place-items: center;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}

@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f8fc;
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.date{
+  font-weight: 500;
+}
+
+.status{
+  display: inline-block;
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+
+.dark-bg {
+  background-color: #333;
+}
+
+.green-bg{
+  background-color: #287450;
+}
+
+.red-bg{
+  background-color: #d43e02;
+}
+
+.pink-bg{
+  background-color: #e21749;
+}
+
+.l{
+  padding: 4px 6px;
+}         
+
+.container{
+  max-width: 1100px;
+  padding: 6rem 1rem;
+  margin: auto;
+}
+
+.title{
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.title h1 {
+  margin-right: 1rem;
+}
+
+.card{
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px 10px #f4f4f7;
+}
+
+.card > *:not(a, span) {
+  width: 80%;
+}
+
+.card-title{
+  padding-top: 0.5rem;
+}
+
+.card-title h2 {
+  margin-right: 0.25rem;
+  display: inline;
+}
+
+.card-content{
+  padding: 1.5rem 0;
+}
+
+a{
+  display: inline-block;
+  background: #f7f8fc;
+  padding: 0.3rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  font-weight: 500;
+  color: #666;
+}
+
+.line{
+  border: 1px solid #333;
+}
