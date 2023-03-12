@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  background: #21203a;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: "Lato", sans-serif;
+  line-height: 1.4;
+  color: #fff;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #356ed8;
+}
+
+button {
+  all: unset;
+  background: #1965f0;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1153ce;
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 4rem 3rem;
+  background: #2f314e;
+  margin: 1rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-section {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.left-section h1 {
+  padding-bottom: 2rem;
+  font-weight: bold;
+}
+
+.left-section P {
+  width: 80%;
+}
+
+.right-section {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.switch {
+  background: #21203a;
+  border-radius: 30px;
+  display: flex;
+  padding: 0.5rem;
+  margin: 10px 0;
+  width: max-content;
+}
+
+.switch p {
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  margin-right: 2px;
+  cursor: pointer;
+  transition: background 300ms;
+}
+
+.switch .active {
+  background: #2f314e;
+}
+
+.amount {
+  margin: 2rem 0;
+}
+
+.amount .price {
+  display: flex;
+  gap: 10px;
+  margin: 0.5rem 0;
+}
+
+.amount .price p {
+  padding: 0.5rem 1rem;
+  border: 1px solid #000;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.price-active {
+  background: #fff;
+  color: #000;
+  transition: all 400ms;
+}
+
+.checkbox {
+  margin: 1rem 0;
+}
+
+.form-control {
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1.5rem auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.input-field > * {
+  margin-bottom: 0.6rem;
+}
+
+.input-field input {
+  background: inherit;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 12px 14px;
+  color: #fff;
+  outline: none;
+  width: 80%;
+}
+
+input::placeholder {
+  color: #ddd;
+}
