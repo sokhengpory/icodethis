@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <title>Photograph Profile</title>
+  </head>
+  <body class="grid place-items-center h-screen bg-[#425878]">
+    <div class="bg-white w-6/12">
+      <div
+        class="relative text-white bg-cover bg-blend-multiply bg-gray-400 p-4"
+        style="
+          background-image: url('https://plus.unsplash.com/premium_photo-1673697239981-389164b7b87f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=844&q=80');
+        "
+      >
+        <div class="flex flex-col items-center justify-center space-y-6">
+          <h1 class="font-bold text-xl">Gojo Satoru</h1>
+          <img
+            src="https://i.pinimg.com/564x/ad/8d/2b/ad8d2ba752bf0e9d7b12a38e5cf45524.jpg"
+            alt="profile picture"
+            class="rounded-full w-24 h-24"
+          />
+          <div class="text-center w-full grid grid-cols-3">
+            <div>
+              <p class="font-bold">230</p>
+              <p>Followers</p>
+            </div>
+            <div>
+              <p class="font-bold">140</p>
+              <p>Following</p>
+            </div>
+            <div>
+              <p class="font-bold">15</p>
+              <p>Albums</p>
+            </div>
+          </div>
+          <div class="flex bg-transparent rounded-full border">
+            <button
+              class="py-2 px-6 border-r hover:bg-opacity-50 hover:bg-gray-800 hover:rounded-l-full transition-all"
+            >
+              <i class="fa-solid fa-user-plus pr-2"></i>Follow
+            </button>
+            <button
+              class="py-2 px-6 hover:bg-opacity-50 hover:bg-gray-800 hover:rounded-r-full transition-all"
+            >
+              <i class="fa-solid fa-message pr-2"></i>
+              Message
+            </button>
+          </div>
+        </div>
+        <div
+          class="absolute top-2 left-2 px-3 py-1 bg-gray-100 bg-opacity-50 rounded-full"
+        >
+          <i class="fa-solid fa-arrow-left text-sm"></i> Back
+        </div>
+        <div
+          class="absolute top-2 right-2 px-3 py-1 bg-gray-100 bg-opacity-50 rounded-full"
+        >
+          &#8230;
+        </div>
+      </div>
+      <div class="bg-white text-gray-700">
+        <div class="flex items-center justify-around p-2">
+          <i class="fa-solid fa-arrow-left text-lg"></i>
+          <div class="text-center">
+            <p>Portraits</p>
+            <p>25 Photos</p>
+          </div>
+          <i class="fa-solid fa-arrow-right text-lg"></i>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-1 p-1" x-data="{images}">
+        <template x-for="(image, i) in images">
+          <figure
+            :class="{
+              'col-span-3': i === 5,
+              'col-span-2': i === 3
+            }"
+          >
+            <img :src="image" class="object-cover h-full" />
+          </figure>
+        </template>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/1e8d063e30.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    const background =
+      'https://plus.unsplash.com/premium_photo-1673697239981-389164b7b87f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=844&q=80'
+
+    const images = [
+      'https://i.pinimg.com/564x/0b/25/6b/0b256b6bf21a2607b9d3950b5b1a764f.jpg',
+      'https://i.pinimg.com/564x/9c/14/de/9c14de4a4bf24650938da37a9bb11c53.jpg',
+      'https://i.pinimg.com/564x/23/5b/4b/235b4b852b7054ab197e6845f5c8171a.jpg',
+      'https://i.pinimg.com/564x/86/70/54/867054734641211eff34f50c30e69a04.jpg',
+      'https://i.pinimg.com/564x/73/98/85/73988526c06d7197980e7559276eb1c2.jpg',
+      'https://i.pinimg.com/564x/06/62/a4/0662a486ea530da454151b41f098f1af.jpg',
+    ]
+  </script>
+</html>
