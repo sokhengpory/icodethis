@@ -11,7 +11,7 @@
     <title>Photograph Profile</title>
   </head>
   <body class="grid place-items-center h-screen bg-[#425878]">
-    <div class="bg-white w-6/12">
+    <div class="bg-white w-full max-w-lg">
       <div
         class="relative text-white bg-cover bg-blend-multiply bg-gray-400 p-4"
         style="
@@ -25,7 +25,7 @@
             alt="profile picture"
             class="rounded-full w-24 h-24"
           />
-          <div class="text-center w-full grid grid-cols-3">
+          <div class="text-center grid grid-cols-3 gap-10">
             <div>
               <p class="font-bold">230</p>
               <p>Followers</p>
@@ -54,16 +54,17 @@
           </div>
         </div>
         <div
-          class="absolute top-2 left-2 px-3 py-1 bg-gray-100 bg-opacity-50 rounded-full"
+          class="absolute top-4 left-2 px-3 py-1 bg-gray-100 bg-opacity-50 rounded-full"
         >
           <i class="fa-solid fa-arrow-left text-sm"></i> Back
         </div>
         <div
-          class="absolute top-2 right-2 px-3 py-1 bg-gray-100 bg-opacity-50 rounded-full"
+          class="absolute top-4 right-2 px-3 py-1 bg-gray-100 bg-opacity-50 rounded-full"
         >
-          &#8230;
+          <i class="fa-solid fa-ellipsis"></i>
         </div>
       </div>
+
       <div class="bg-white text-gray-700">
         <div class="flex items-center justify-around p-2">
           <i class="fa-solid fa-arrow-left text-lg"></i>
@@ -74,16 +75,17 @@
           <i class="fa-solid fa-arrow-right text-lg"></i>
         </div>
       </div>
-      <div class="grid grid-cols-3 gap-1 p-1" x-data="{images}">
+
+      <div class="grid grid-cols-3 gap-1 p-1 w-full h-96" x-data="{images}">
         <template x-for="(image, i) in images">
-          <figure
+          <img
+            :src="image"
+            class="object-cover h-0 min-h-full min-w-full"
             :class="{
-              'col-span-3': i === 5,
-              'col-span-2': i === 3
-            }"
-          >
-            <img :src="image" class="object-cover h-full" />
-          </figure>
+            'col-span-2': i === 3,
+            'col-span-3': i === 5,
+          }"
+          />
         </template>
       </div>
     </div>
