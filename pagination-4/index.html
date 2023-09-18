@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <title>Pagination 4</title>
+  </head>
+  <body class="grid place-items-center h-screen">
+    <div
+      class="flex gap-2 w-7/12 p-2 items-center justify-center shadow-xl shadow-cyan-100/100"
+      x-data="{activePage: 1}"
+    >
+      <i
+        class="fa-solid fa-arrow-left text-gray-300 pr-2 hover:text-cyan-300 hover:cursor-pointer"
+        :class="activePage === 1 ? 'text-gray-300' : 'text-cyan-300'"
+        @click="activePage === 1 ? activePage : activePage--"
+      ></i>
+      <template x-for="page in 9">
+        <div
+          class="rounded-full w-8 h-8 p-2 text-gray-500 flex justify-center items-center transition-colors hover:bg-cyan-400 hover:text-white hover:cursor-pointer"
+          x-text="page"
+          :class="activePage === page ? 'bg-cyan-400 text-white' : ''"
+          @click="activePage = page"
+        ></div>
+      </template>
+      <i
+        class="fa-solid fa-arrow-right text-gray-300 pl-2 hover:text-cyan-300 hover:cursor-pointer"
+        :class="activePage === 9 ? 'text-gray-300' : 'text-cyan-300'"
+        @click="activePage === 9 ? activePage : activePage++"
+      ></i>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/1e8d063e30.js"
+    crossorigin="anonymous"
+  ></script>
+  <script></script>
+</html>
