@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>User Card 2</title>
+  </head>
+  <body class="grid place-items-center h-screen bg-[#10182f]">
+    <main>
+      <section
+        class="bg-[#172240] text-center text-white relative w-96 rounded-md py-10 px-2 after:absolute after:border-x-[1rem] after:border-b-0 after:border-t-[10px] after:border-x-transparent after:-bottom-2 after:left-44 after:border-[#172240]"
+      >
+        <img
+          src="https://i.pinimg.com/564x/25/50/c5/2550c58f79c00b9d13ac0d1aefb1b1aa.jpg"
+          alt="gojo"
+          class="rounded-full w-32 h-32 mx-auto absolute -top-16 left-32 ring-2"
+        />
+        <div class="py-10">
+          <h1 class="text-3xl pb-1">Gojo Satoru</h1>
+          <h2 class="text-2xl text-gray-400">@gojo_satoru</h2>
+          <div class="flex justify-center items-center text-xl pt-8">
+            <i class="fa-solid fa-location-dot"></i>
+            <p class="ml-2 text-gray-400">Shibuya City</p>
+          </div>
+        </div>
+        <hr class="border-gray-950 w-11/12 mx-auto" />
+        <figure class="flex justify-center -space-x-2 pt-8 pb-2">
+          <img
+            src="https://i.pinimg.com/564x/c7/bb/d6/c7bbd657568bf6493a1bd5bab9ea4075.jpg"
+            alt="riko"
+            class="w-12 h-12 rounded-full ring-2 ring-black"
+          />
+          <img
+            src="https://i.pinimg.com/736x/60/4f/67/604f67a63f3666cfe8a36cd999f91b46.jpg"
+            alt="megumi"
+            class="w-12 h-12 rounded-full ring-2 ring-black"
+          />
+          <img
+            src="https://i.pinimg.com/564x/92/20/2e/92202ea241f448bcef506033afad403b.jpg"
+            alt="yuta"
+            class="w-12 h-12 rounded-full ring-2 ring-black"
+          />
+        </figure>
+        <p class="text-lg pb-10">
+          Followed by
+          <a
+            class="border-b hover:text-[#6495ff] hover:border-[#6495ff] hover:cursor-pointer"
+            >3 people</a
+          >
+          you follow
+        </p>
+        <button
+          class="bg-[#6495ff] rounded-full px-16 py-3 text-xl hover:bg-[#5177ca] transition-colors"
+        >
+          Follow
+        </button>
+      </section>
+
+      <section class="flex items-center justify-center space-x-4 pt-6">
+        <img
+          src="https://i.pinimg.com/564x/25/50/c5/2550c58f79c00b9d13ac0d1aefb1b1aa.jpg"
+          alt="gojo"
+          class="rounded-full w-20 h-20 ring-2"
+        />
+        <h1 class="text-white text-2xl">Gojo Satoru</h1>
+      </section>
+    </main>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/1e8d063e30.js"
+    crossorigin="anonymous"
+  >
+    const riko = 'https://i.pinimg.com/564x/c7/bb/d6/c7bbd657568bf6493a1bd5bab9ea4075.jpg'
+    const megumi = 'https://i.pinimg.com/736x/60/4f/67/604f67a63f3666cfe8a36cd999f91b46.jpg'
+    const yuta = 'https://i.pinimg.com/564x/92/20/2e/92202ea241f448bcef506033afad403b.jpg'
+  </script>
+</html>
