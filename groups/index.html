@@ -22,8 +22,11 @@
     </script>
     <title>Groups</title>
   </head>
+
   <body class="bg-primary grid place-items-center h-screen">
-    <main class="bg-secondary w-full max-w-4xl flex gap-8 p-6 h-3/5 rounded-xl">
+    <main
+      class="bg-secondary w-full max-w-screen-md flex gap-8 p-6 md:h-2/3 lg:h-1/2 rounded-xl"
+    >
       <aside
         class="p-4 bg-primary rounded-2xl text-gray-400 flex flex-col justify-center gap-4 hover:[&>svg]:bg-secondary hover:[&>svg]:cursor-pointer hover:[&>svg]:rounded-lg"
       >
@@ -89,7 +92,9 @@
           />
         </svg>
       </aside>
-      <section class="text-gray-400 flex-grow flex flex-col justify-around">
+      <section
+        class="text-gray-400 flex-grow flex flex-col gap-4 justify-around"
+      >
         <header class="flex justify-between">
           <div class="flex gap-2 text-2xl items-center font-serif">
             <svg
@@ -141,16 +146,16 @@
         </header>
         <section
           x-data="{ groups }"
-          class="grid grid-cols-4 gap-5 [&>*]:rounded-lg [&>*]:py-9 [&>*]:shadow-xl"
+          class="grid grid-cols-4 gap-5 [&>*]:rounded-lg h-3/4 [&>*]:h-full [&>*]:shadow-sm hover:[&>*]:scale-105 hover:[&>*]:cursor-pointer hover:[&>*]:shadow-lg [&>*]:transition-all"
         >
-          <div class="bg-[#363e5d] text-center grid">
+          <div class="bg-[#363e5d] flex flex-col justify-center items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-10 h-10 p-2 m-auto rounded-full bg-primary"
+              class="w-10 h-10 p-2 rounded-full bg-primary mb-2"
             >
               <path
                 stroke-linecap="round"
@@ -162,7 +167,9 @@
           </div>
 
           <template x-for="group in groups">
-            <div class="bg-[#363e5d] text-center bg-primary relative">
+            <div
+              class="bg-[#363e5d] text-center bg-primary relative flex flex-col justify-center"
+            >
               <img :src="group.imgSrc" class="w-16 h-16 mx-auto rounded-full" />
               <div class="pt-2">
                 <p x-text="group.name" class="text-lg font-semibold"></p>
