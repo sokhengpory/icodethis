@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      }
+    </script>
+    <title>Landing Page 2</title>
+  </head>
+  <body
+    x-data="{nav: ['Home', 'Articles', 'Pricing', 'About', 'Contact']}"
+    class="h-screen flex flex-col"
+  >
+    <header class="border-b flex justify-between p-4 items-center">
+      <div class="basis-36">
+        <img
+          src="https://www.freeiconspng.com/thumbs/logo-design/blank-bird-logo-design-idea-png-15.png"
+          class="w-12 h-12"
+        />
+      </div>
+      <nav class="justify-items-end">
+        <ul class="flex gap-x-4">
+          <template x-for="item in nav">
+            <li
+              x-text="item"
+              class="p-2 hover:bg-gray-100 hover:cursor-pointer hover:rounded-md transition-all"
+            ></li>
+          </template>
+        </ul>
+      </nav>
+      <div class="space-x-2 [&>*]:transition-all">
+        <button
+          class="bg-gray-200 px-4 py-1.5 rounded-lg hover:bg-gray-300 [&>*]:transition-all"
+        >
+          Log In
+        </button>
+        <button
+          class="bg-slate-800 text-white px-4 py-1.5 rounded-lg hover:bg-slate-900"
+        >
+          Start Free Trial
+        </button>
+      </div>
+    </header>
+    <main class="flex-1 flex flex-col">
+      <section class="flex-grow grid place-items-center border-b p-2">
+        <div class="text-center space-y-6 [&>*]:mx-auto">
+          <h1 class="font-bold text-6xl max-w-xl">
+            A modern way to build websites.
+          </h1>
+          <p class="w-4/5 font-medium">
+            Empower designers to build professional, custom websites in a
+            completely visual canvas with no code.
+          </p>
+          <button
+            class="bg-slate-800 text-white p-4 px-6 rounded-lg hover:bg-slate-900"
+          >
+            Start free trial
+          </button>
+        </div>
+      </section>
+      <section class="w-full max-w-5xl mx-auto p-2">
+        <p
+          class="font-medium text-sm pt-2 flex items-center justify-center before:h-0.5 before:basis-40 before:mr-2 before:mt-1 before:bg-gray-300 after:h-0.5 after:basis-40 after:ml-2 after:mt-1 after:bg-gray-300"
+        >
+          We share our thoughts on design
+        </p>
+        <div x-data="{ blogs }" class="flex gap-x-6 p-4">
+          <template x-for="blog in blogs">
+            <article class="space-y-2 flex-1 hover:shadow">
+              <div class="w-full overflow-hidden">
+                <img
+                  :src="blog.img"
+                  class="object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+              <h2 x-text="blog.title" class="font-bold"></h2>
+              <p x-text="blog.date" class="text-sm"></p>
+            </article>
+          </template>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script>
+    const blogs = [
+      {
+        img: 'https://img.freepik.com/free-photo/laptop-balancing-with-purple-background_23-2150271750.jpg?size=626&ext=jpg&ga=GA1.1.317309481.1697078101&semt=sph',
+        title: 'Redesigning my site increased sales by over 400% in one week.',
+        date: 'Jul 1, 2020',
+      },
+      {
+        img: 'https://img.freepik.com/free-photo/woman-checking-out-free-design-resources-website_53876-138963.jpg?size=626&ext=jpg&ga=GA1.1.317309481.1697078101&semt=sph',
+        title: 'Design handoff: What engineers really want to see.',
+        date: 'Jul 1, 2020',
+      },
+      {
+        img: 'https://img.freepik.com/free-photo/laptop-table_53876-176755.jpg?size=626&ext=jpg&ga=GA1.1.317309481.1697078101&semt=sph',
+        title: 'A comprehensive list of human-computer interactions.',
+        date: 'Jul 1, 2020',
+      },
+      {
+        img: 'https://img.freepik.com/free-photo/closeup-hands-using-mobile-phone-computer-laptop-black-marble-table_53876-41688.jpg?size=626&ext=jpg&ga=GA1.1.317309481.1697078101&semt=sph',
+        title: 'Why do people hate redesigns?',
+        date: 'Jul 1, 2020',
+      },
+    ]
+  </script>
+</html>
