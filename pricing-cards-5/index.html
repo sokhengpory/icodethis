@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#19223f',
+              secondary: '#7b3bf2',
+            },
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+        },
+      }
+    </script>
+    <title>Pricing Cards 5</title>
+  </head>
+  <body class="bg-primary text-white grid place-items-center h-screen">
+    <main x-data="{ plans }" class="flex flex-wrap justify-center gap-4">
+      <template x-for="plan in plans">
+        <section
+          class="border-[0.75rem] border-[#212d4e] bg-[#212d4e] rounded-xl text-center hover:border-secondary hover:bg-secondary group transition-colors"
+        >
+          <div class="rounded-xl bg-primary">
+            <div class="p-10">
+              <h2 x-text="plan.type" class="text-xl pb-6 uppercase"></h2>
+              <h1 class="pb-4">
+                <span x-text="plan.storage.amount" class="text-5xl"></span>
+                <span x-text="plan.storage.type" class="text-6xl"></span>
+              </h1>
+              <p x-text="plan.desc" class="text-lg pb-8"></p>
+              <button
+                class="px-8 py-2 rounded-lg text-lg border-2 border-secondary transition-all bg-gradient-to-r from-secondary from-50% to-primary to-50% bg-right-bottom bg-[length:205%_100%] hover:bg-left-bottom duration-500"
+              >
+                Purchase
+              </button>
+            </div>
+            <div class="border-t border-gray-700 p-10 space-y-3">
+              <template x-for="desc in plan.text">
+                <p>
+                  <span class="pr-2">&#10003;</span><span x-text="desc"></span>
+                </p>
+              </template>
+            </div>
+          </div>
+        </section>
+      </template>
+    </main>
+  </body>
+  <script>
+    const plans = [
+      {
+        type: 'Basic',
+        storage: {
+          amount: 100,
+          type: 'GB',
+        },
+        desc: '1 month, then $1,7/month',
+        text: [
+          '100 GB storage',
+          'Option to add members',
+          'Extra member benefits',
+        ],
+      },
+      {
+        type: 'Standard',
+        storage: {
+          amount: 200,
+          type: 'GB',
+        },
+        desc: '1 month, then $2,9/month',
+        text: [
+          '200 GB storage',
+          'Option to add members',
+          'Extra member benefits',
+        ],
+      },
+      {
+        type: 'Premium',
+        storage: {
+          amount: 2,
+          type: 'TB',
+        },
+        desc: '1 month, then $8,9/month',
+        text: [
+          '2 TB storage',
+          'Option to add members',
+          'Extra member benefits',
+        ],
+      },
+    ]
+  </script>
+</html>
