@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script
+      src="https://kit.fontawesome.com/1e8d063e30.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+          },
+        },
+      }
+    </script>
+    <title>Conferences Page</title>
+  </head>
+  <body
+    class="bg-gray-100 grid place-items-center h-screen"
+    x-data="{ menus, filters, articles }"
+  >
+    <main class="bg-white max-w-7xl w-full h-5/6 shadow-lg">
+      <header class="flex justify-between border-b">
+        <nav class="flex space-x-6 p-4">
+          <template x-for="menu in menus">
+            <a
+              href="#"
+              x-text="menu"
+              :class="menu === 'Conferences' ? 'text-black font-bold' : 'text-gray-500'"
+            ></a>
+          </template>
+        </nav>
+        <div>
+          <button class="h-full px-8">Log In</button>
+          <button class="bg-black text-white h-full px-8">Get Started</button>
+        </div>
+      </header>
+      <section class="px-10 py-6">
+        <header class="flex space-x-1 mb-4">
+          <p class="bg-gray-200 text-gray-700 rounded-xl px-2.5 py-0.5">
+            Conferences
+          </p>
+          <p>/</p>
+          <p class="bg-gray-200 text-gray-700 rounded-xl px-2.5 py-0.5">
+            Bergen
+          </p>
+        </header>
+
+        <div class="flex justify-between">
+          <div class="space-y-4" x-data="{ active: 'All', activeEl: '' }">
+            <h1 class="text-2xl font-bold">Conferences in Bergen</h1>
+            <div
+              class="flex gap-1 relative"
+              x-data="{ styles: { width: '33px', height: '28px', left: '0' } }"
+            >
+              <template x-for="filter in filters">
+                <button
+                  x-text="filter"
+                  class="py-1 px-2 rounded-sm text-sm z-10"
+                  :class="active === filter && 'text-white'"
+                  @click="active = filter; styles = { width: `${$el.offsetWidth}px`, height: `${$el.offsetHeight}px`, left: `${$el.offsetLeft}px`}"
+                ></button>
+              </template>
+              <div
+                class="bg-black absolute transition-all"
+                :style="styles"
+              ></div>
+            </div>
+            <template x-for="article in articles">
+              <article class="border-b py-2 leading-8">
+                <p
+                  x-text="article.date || 'Postponed' "
+                  class="text-sm text-gray-500"
+                  :class="article.date || 'text-red-400'"
+                ></p>
+                <h2 x-text="article.title" class="font-bold"></h2>
+              </article>
+            </template>
+          </div>
+
+          <aside class="border px-4 py-6 w-72 space-y-4 rounded-md h-max">
+            <h3 class="font-bold text-lg px-4">Discover</h3>
+            <ul class="[&>*]:transition-colors">
+              <template x-for="item in list">
+                <li
+                  class="px-4 py-2 rounded-sm group hover:bg-black hover:text-white hover:cursor-pointer"
+                >
+                  <div class="flex items-center gap-2">
+                    <i :class="item.icon"></i>
+                    <h4 x-text="item.title"></h4>
+                  </div>
+                  <p
+                    x-text="item.text"
+                    class="text-sm text-gray-700 group-hover:text-white"
+                  ></p>
+                </li>
+              </template>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script>
+    const menus = ['Discover', 'Live', 'Jobs', 'Conferences']
+    const filters = ['All', 'Today', ' This Week', 'June', 'July']
+    const articles = [
+      {
+        date: 'Mon 22 - Fri, 26 Jun 2020',
+        title: 'International Conference on Tests and Proofs (TAP)',
+      },
+      {
+        date: 'Mon 22 - Fri, 26 Jun 2020',
+        title: 'Europen Conference on Modelling Foundations',
+      },
+      {
+        date: null,
+        title: 'Conference on Graph Transformation',
+      },
+      {
+        date: 'Mon 22 - Fri, 26 Jun 2020',
+        title: 'International Conference on Tests and Proofs (TAP)',
+      },
+      {
+        date: null,
+        title: 'Scandinavian Login Symposium (SLSS)',
+      },
+    ]
+    const list = [
+      {
+        title: 'Business Intelligence',
+        text: 'Historical, current, and predictive views of business operations.',
+        icon: 'fa-solid fa-box',
+      },
+      {
+        title: 'Commerce',
+        text: 'Systems, goods and services, small and large scale',
+        icon: 'fa-solid fa-cart-shopping',
+      },
+      {
+        title: 'Human Resources',
+        text: 'About people who make up the workforce of an organization',
+        icon: 'fa-solid fa-user-group',
+      },
+      {
+        title: 'Internet of Things',
+        text: 'Human-to-human and human-to-computer interaction',
+        icon: 'fa-solid fa-box-archive',
+      },
+    ]
+  </script>
+</html>
